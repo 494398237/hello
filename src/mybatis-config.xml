@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+
+    <properties resource="db.properties"/>
+<!--    以后基本不使用setting-->
+<!--    <settings>-->
+<!--        <setting name="" value=""/>-->
+<!--    </settings>-->
+    <environments default="development1">
+        <environment id="development1">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="${jdbc.driver}"/>
+                <property name="url" value="${jdbc.url}"/>
+                <property name="username" value="${jdbc.username}"/>
+                <property name="password" value="${jdbc.password}"/>
+            </dataSource>
+        </environment>
+        <environment id="development2">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/test"/>
+                <property name="username" value="root"/>
+                <property name="password" value="1158051840"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+<!--    <mapper resource="com/dao/StudentsDao.xml"/>-->
+<!--        未来项目开发中，一定是批量注册mapper映射文件-->
+        <package name="com.dao"/>
+</mappers>
+</configuration>
